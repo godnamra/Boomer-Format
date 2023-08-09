@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/15097/Downloads/index.html?cardName=&cardDesc= -->
+<html class="no-js"><!--<![endif]-->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dueling Network v2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="C:\programming projects\javascipt\Dueling Network\normalize.css">
+    <link rel="stylesheet" href="C:\programming projects\javascipt\Dueling Network\main.css">
+    <script src="C:\programming projects\javascipt\Dueling Network\modernizr-2.8.3.min.js"></script>
+    <script src="C:\programming projects\javascipt\Dueling Network\jquery-1.12.0.min.js"></script>
+   
+    <script src="C:\programming projects\javascipt\Dueling Network\deckedit.js"></script>
+
+</head>
+
+<style>
+    img {
+        width: 100px; /* Set the desired width */
+        height: auto; /* Automatically adjust height to maintain aspect ratio */
+    }
+</style>
+
+<script type = "text/javascript" src="cdbapi.js"></script>
+<button onclick="cardData()">Card Data</button>
+<object data="file:///C:/programming%20projects/javascipt/Dueling%20Network/Zee_Cardlist.txt" width="300" height="200">
+    
+</object>
+    
+
+
+<input type="text" id="textInput" placeholder="Enter your name">
+    <button onclick="showInputValue()">Submit</button>
+
+    <script>
+    
+        function showInputValue() {
+            // Get the input element by its id
+            const inputElement = document.getElementById("textInput");
+            
+            // Get the value of the input
+            const inputValue = inputElement.value;
+            
+            // Do something with the input value (e.g., display it)
+            alert("Hello, " + inputValue + "!");
+        }
+    </script>
+
+
+
+<style>
+    body{
+        font-family: "Open Sans", sans-serif;
+    }
+    #context-menu {
+        display: "none";
+        position: absolute;
+        z-index: 100;
+        width:100px;
+        background:#1b1a1a
+    }
+    #context-menu .item{
+        padding:5px 5px;
+        font-size:15px;
+        color:#eee;
+    }
+    #context-menu .item:hover {
+        background:#555;
+    }
+</style>
+
+    <div id="context-menu" class="context-menu" style="display: none;">
+        
+        <div class="item">
+            <i class="fas fa-caret-right"></i> Add to Main Deck
+        </div>
+        <div class="item">
+            <i class="fas fa-caret-right"></i> Add to Side Deck
+        </div>
+        <div class="item">
+            <i class="fas fa-caret-right"></i> Add to Extra Deck
+        </div>
+    
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="deckeditor">
+    <link rel="stylesheet" href="C:\programming projects\javascipt\Dueling Network\deckedit.css">
+    <div class="backbutton" onclick="pagenavto(&#39;mainscreen&#39;);">Back</div>
+    <div class="uibutton cleardeck" onclick="cleardeck()">Clear Deck</div>
+    <div class="uibutton setasdefault" onclick="setdefaultdeck()">Set As Default</div>
+    <select class="uibutton decklist"></select>
+    <div class="uibutton newdeck" onclick="newdeck()">New Deck</div>
+    <div class="uibutton renamedeck" onclick="startrenamedeck">Rename Deck</div>
+    <div class="uibutton deletedeck" onclick="startdeletedeck">Delete Deck</div>
+    <div class="uibutton savedeck" onclick="">Save Deck</div>
+    <div class="uibutton savedeckas" onclick="">Save Deck As</div>
+    <div class="uibutton uiexit" onclick="pagenavto(&#39;mainscreen&#39;)">Exit</div>
+    <div id="searchpanel">
+        <div id="searchfilters">
+            <h2>Cards</h2>
+            <form id="formCardSearch" onsubmit="getCard(); return false;" autocomplete="off">
+                
+                <input class="full-length" type="text" id="cardName" name="cardName" placeholder="Card Name">
+
+                <input class="full-length" type="text" id="cardDesc" name="cardDesc" placeholder="Effect">
+
+                <label>Card:</label>
+                <select id="cardCategory" onchange="switchformfields()">
+                    <option selected="">All</option>
+                    <option>Monster</option>
+                    <option>Spell</option>
+                    <option>Trap</option>
+                </select>
+
+                <select disabled="" class="monster-only" id="cardSubcategory">
+                    <option selected="">All</option>
+                </select>
+
+                <label>Type:</label>
+                <select disabled="" id="cardType">
+                    <option selected="">All</option>
+                </select>
+                <select disabled="" class="monster-only" id="cardSubtype">
+                    <option selected="">All</option>
+                </select>
+
+                <br>
+
+                <div class="form-wrapper-left">
+                    <label>Attr:</label>
+                    <select disabled="" class="monster-only" id="cardAttribute">
+                        <option selected="">All</option>
+                        <option>DIVINE</option>
+                    </select>
+                </div>
+
+                <div class="form-wrapper-right">
+                    <input disabled="" class="monster-only stat-input-sm" type="number" id="levelLow">
+                    <label>≤ Level / Rank ≤</label>
+                    <input disabled="" class="monster-only stat-input-sm" type="number" id="levelHigh">
+                </div>
+
+                <br>
+
+                <div class="form-wrapper-left">
+                    <input disabled="" class="monster-only stat-input-md" type="number" id="atkLow">
+                    <label>≤ ATK ≤</label>
+                    <input disabled="" class="monster-only stat-input-md" type="number" id="atkHigh">
+                </div>
+                <div class="form-wrapper-right">
+                    <input disabled="" class="monster-only stat-input-md" type="number" id="defLow">
+                    <label>≤ DEF ≤</label>
+                    <input disabled="" class="monster-only stat-input-md" type="number" id="defHigh">
+                </div>
+                <br>
+
+                <div class="form-wrapper-left">
+                    <label>Limit:</label>
+                    <select>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="form-wrapper-right">
+                    <label>Order:</label>
+                    <select>
+                        <option>A-Z</option>
+                        <option>Z-A</option>
+                        <option>Newest</option>
+                        <option>Oldest</option>
+                    </select>
+                </div>
+                <br>
+
+                <button id="cardSearchSubmit" type="submit" value="submit">Search</button>
+            </form>
+        </div>
+        <div id="cardresultspanel">
+        </div>
+    </div>
+    <div id="maindeckpanel">
+        <h3>Main Deck</h3>
+        <div id="cardcountspanel">
+
+        </div>
+        <ul id="maindeck">
+
+        </ul>
+    </div>
+    <div id="sidedeckpanel">
+        <h3>Side Deck</h3>
+        <ul id="sidedeck">
+
+        </ul>
+    </div>
+    <div id="extradeckpanel">
+        <h3>Extra Deck</h3>
+        <ul id="extradeck">
+
+        </ul>
+    </div>
+</section>
+
+
+
+</html>
+
+

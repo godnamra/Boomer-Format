@@ -1,0 +1,575 @@
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* csslint */
+
+.catchadream {
+    background-image: -webkit-linear-gradient(left, red, orange, yellow, blue, lightgreen, green, yellow, orange, red, green, green, green, green, green, green, green, green, green, yellow, green, lightgreen, green, green);
+    -webkit-animation: charlieeee 10s forwards linear infinite;
+    animation: charlieeee 2.5s forwards linear ease infinite;
+    background-size: 50% auto;
+}
+
+html,
+body,
+main,
+main > section {
+    height: 100%;
+    overflow: hidden;
+    /*prevent anything off the page from being displayed*/
+}
+
+main {
+    background: url(../img/bg.png)
+}
+
+a#forumlink {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    font-size: 1.5em;
+    color: lightgreen;
+    text-decoration: none;
+}
+
+a#ruleslink {
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    font-size: 1.5em;
+    color: hotpink;
+    text-decoration: none;
+}
+
+#introanimation {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#news {
+    position: absolute;
+    left: 50%;
+    bottom: 20vh;
+    width: 40vw;
+    height: 30vh;
+    background: white;
+    overflow-y: scroll;
+}
+
+#duelinglogo {
+    animation: dueling 5s reverse infinite;
+    width: 40vw;
+    float: left;
+    clear: left;
+    background-image: url(../img/dueling1.png);
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    webkit-transition: background-image 300ms;
+    background-position: center center;
+}
+
+#networklogo {
+    animation: network 5s reverse infinite;
+    width: 40vw;
+    float: left;
+    clear: left;
+    background-image: url(../img/network1.png);
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+main > section {
+    padding: 50px;
+    color: silver;
+    padding-bottom: 0;
+    position: relative;
+}
+
+main > section > .navbar {
+    position: absolute;
+    top: 0;
+    width: 90%;
+    background: black;
+    height: 49px;
+    padding: 5px;
+}
+
+.displayform {
+    display: none;
+}
+
+.displayform.activeform {
+    display: block;
+}
+
+.textline input {
+    width: 9em;
+    float: right;
+}
+
+.textline span {
+    float: left;
+}
+
+.textline {
+    /* background: blue; */
+    padding-top: .5em;
+    /* padding-bottom: 1em; */
+    clear: both;
+}
+
+#login {
+    float: left;
+}
+
+#chat {
+    position: absolute;
+    top: 0;
+    height: 80%;
+    background: white;
+    width: 254px;
+    resize: both;
+    z-index: 49;
+}
+
+#onlineusers {
+    position: absolute;
+    top: 0;
+    left: 274px;
+    height: 75%;
+    background: white;
+    width: 254px;
+    resize: both;
+    z-index: 49;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.green {
+    font-weight: bold;
+    color: limegreen;
+    text-shadow: 1px 1px 2px black;
+}
+
+.silver {
+    font-weight: bold;
+    color: silver;
+    text-shadow: 1px 1px 0px black;
+}
+
+.gold {
+    font-weight: bold;
+    color: gold;
+    text-shadow: 1px 1px 0px black;
+}
+
+.modalContainer {
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    text-align: center;
+}
+
+.modalBox {
+    width: 25vw;
+    margin: 25% auto;
+    border: 5px solid white;
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    background: black;
+}
+
+.modalOKButton {
+    margin: 2vh auto;
+    width: 3em;
+    background: green;
+    padding: 1vh 0em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.friend {
+    font-weight: bold;
+    color: blue;
+}
+
+h1 {
+    font-size: 80px;
+    height: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+#chat h2 {
+    height: 8%;
+    padding: 9px 5px;
+    margin: 0;
+    background: blue;
+    width: 100%;
+    color: white;
+}
+
+#onlineusers h2 {
+    height: 8%;
+    padding: 8px 5px;
+    margin: 0;
+    background: blue;
+    width: 100%;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#chat input[type="text"] {
+    border: 1px solid blue;
+    width: 100%;
+    resize: none;
+}
+
+#chat {
+    height: 75%;
+    resize: both;
+    overflow: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#online users {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#chat ul {
+    list-style: none;
+    padding: 0 5px;
+    height: 81%;
+    overflow-y: scroll;
+    margin: 0;
+    resize: none;
+    word-wrap: break-word;
+}
+
+#useronlinecount {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+#onlineusers ul {
+    list-style: none;
+    padding: 0 5px;
+    height: 81%;
+    overflow-y: scroll;
+    margin: 0;
+    resize: none;
+    word-wrap: break-word;
+}
+
+#chat span {
+    font-weight: bold;
+}
+
+.username0 {
+    color: blue;
+}
+
+.minimize {
+    height: 30px;
+    width: 30px;
+    background: orange;
+    float: right;
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, .5);
+    border-radius: 6px;
+}
+
+.minimize:after {
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    background: white;
+    z-index: 100;
+    content: "";
+    left: 5px;
+    bottom: 5px;
+}
+
+.chatminimize {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    height: 40px;
+    width: 40px;
+    background: url(../img/pub_chat.svg) center no-repeat;
+    display: none;
+}
+
+.privateminimize {
+    position: fixed;
+    bottom: 40px;
+    left: 100px;
+    height: 40px;
+    width: 40px;
+    background: url(../img/private_chat.svg) center no-repeat;
+    display: none;
+}
+
+.onlinelistminimize {
+    position: fixed;
+    bottom: 90px;
+    left: 40px;
+    height: 40px;
+    width: 40px;
+    background: orange;
+    display: none;
+}
+
+.uibutton {
+    background: rgba(200, 200, 200, .85);
+    width: 7em;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px silver;
+    position: absolute;
+    color: black;
+    cursor: pointer;
+}
+
+.uiexit {
+    left: 160px;
+    bottom: 40px;
+}
+
+.savedeckas {
+    bottom: 65px;
+    left: 160px;
+}
+
+.savedeck {
+    bottom: 90px;
+    left: 160px;
+}
+
+.deletedeck {
+    bottom: 115px;
+    left: 160px;
+}
+
+.renamedeck {
+    bottom: 140px;
+    left: 160px;
+}
+
+.newdeck {
+    bottom: 140px;
+    left: 40px;
+}
+
+.decklist {
+    bottom: 165px;
+    left: 40px;
+    width: 14.5em;
+}
+
+.cleardeck {
+    left: 40px;
+    bottom: 195px;
+}
+
+.setasdefault {
+    left: 160px;
+    bottom: 195px;
+}
+
+@-webkit-keyframes charlieeee {
+    from {
+        background-position: top left;
+    }
+    to {
+        background-position: top right;
+    }
+}
+
+@-webkit-keyframes dueling {
+    0% {
+        background-image: url(../img/dueling1.png);
+    }
+    80% {
+        background-image: url(../img/dueling2.png);
+    }
+    90% {
+        background-image: url(../img/dueling1.png);
+    }
+}
+
+@-webkit-keyframes network {
+    0% {
+        background-image: url(../img/network1.png);
+    }
+    80% {
+        background-image: url(../img/network2.png);
+    }
+    90% {
+        background-image: url(../img/network1.png);
+    }
+}
+
+div#mainmenutitle {
+    font-size: 7vh;
+    color: white;
+    text-align: center;
+}
+
+#entryfooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1.5em;
+    background: black;
+}
+
+.mainbutton {
+    width: 41vw;
+    background: blue;
+    text-align: center;
+    float: left;
+    margin: 2vh 2vw;
+    font-size: 6vh;
+    color: white;
+    padding: 3vh 1vw;
+    border: 6px solid seagreen;
+    box-shadow: inset 0px 0px 70px white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mainbutton:hover {
+    background: seagreen;
+}
+
+div#socialmedia {
+    position: absolute;
+    bottom: 12vh;
+    right: 10vw;
+    height: 30px;
+}
+
+#mutebutton {
+    position: fixed;
+    right: .5vw;
+    bottom: .5vh;
+    width: 2vw;
+    height: 2vw;
+}
+
+#camera {
+    position: fixed;
+    right: .5vw;
+    top: .5vh;
+    width: 2vw;
+    height: 2vw;
+}
+
+div#socialmedia img {
+    height: 30px;
+    width: 30px;
+    background: transparent;
+}
+
+div#socialmedia img:hover {
+    box-shadow: 0 0 15px white;
+    background: white;
+    border-radius: 5px;
+}
+
+#landing form {
+    background: rgba(200, 200, 200, .4);
+    padding: 1vh 1vh;
+    color: black;
+    float: left;
+    clear: left;
+    width: 20em;
+}
+
+.mainbutton.exit {
+    margin: 2vw 26vw;
+}
+
+.backbutton {
+    background: red;
+    float: right;
+    width: 4vw;
+    text-align: center;
+    font-size: 3vh;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 15px white;
+    border: 5px solid white;
+}
+
+.lobby {
+    height: 17em;
+    width: 33%;
+    border: 5px solid white;
+    border-radius: 10px;
+    margin: 2vw;
+    background: ghostwhite;
+}
+
+.lobby ul {
+    list-style-type: none;
+}
+
+.lobby ul li {
+    border: 1px solid black;
+}
+
+.lobby-title {
+    font-weight: bold;
+    font-size: 3vh;
+    color: black;
+    text-align: center;
+}
+
+.lobby-container {
+    display: inline-flex;
+    width: 100%;
+}
+
+#adminswitchcontainer {
+    display: none;
+}
+
+#openadminpanel {
+    display: none;
+    background: red;
+}
